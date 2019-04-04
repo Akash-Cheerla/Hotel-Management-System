@@ -1,0 +1,116 @@
+MariaDB [Hotel]> show tables;
++-----------------+
+| Tables_in_Hotel |
++-----------------+
+| booking         |
+| customer        |
+| employee        |
+| hotel           |
+| payment         |
+| room            |
+| services        |
+| stays           |
++-----------------+
+8 rows in set (0.001 sec)
+
+MariaDB [Hotel]> desc booking;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| booking_id   | varchar(10) | NO   | PRI | NULL    |       |
+| hotel_id     | varchar(10) | NO   | MUL | NULL    |       |
+| room_no      | varchar(10) | YES  |     | NULL    |       |
+| customer_id  | varchar(10) | NO   | MUL | NULL    |       |
+| booking_type | varchar(10) | NO   |     | NULL    |       |
+| booking_date | varchar(10) | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.002 sec)
+
+MariaDB [Hotel]> desc customer;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| customer_id      | varchar(10) | NO   | PRI | NULL    |       |
+| customer_name    | varchar(30) | NO   |     | NULL    |       |
+| customer_mobile  | varchar(12) | NO   |     | NULL    |       |
+| customer_email   | varchar(40) | NO   |     | NULL    |       |
+| customer_address | varchar(50) | NO   |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+MariaDB [Hotel]> desc employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| emp_id      | varchar(10) | NO   | PRI | NULL    |       |
+| hotel_id    | varchar(10) | NO   | MUL | NULL    |       |
+| emp_name    | varchar(10) | NO   |     | NULL    |       |
+| emp_contact | varchar(12) | NO   |     | NULL    |       |
+| emp_salary  | varchar(10) | NO   |     | NULL    |       |
+| emp_address | varchar(50) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+6 rows in set (0.002 sec)
+
+MariaDB [Hotel]> desc hotel;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| hotel_id     | varchar(10)  | NO   | PRI | NULL    |       |
+| hotel_name   | varchar(20)  | NO   |     | NULL    |       |
+| hotel_desc   | varchar(100) | NO   |     | NULL    |       |
+| hotel_city   | varchar(20)  | NO   |     | NULL    |       |
+| hotel_addres | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+MariaDB [Hotel]> desc payment;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| payment_id     | varchar(10)  | NO   | PRI | NULL    |       |
+| booking_id     | varchar(10)  | NO   | MUL | NULL    |       |
+| payment_date   | varchar(10)  | NO   |     | NULL    |       |
+| payment_amount | decimal(8,0) | NO   |     | NULL    |       |
+| payment_desc   | varchar(100) | NO   |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [Hotel]> desc room;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| room_no    | varchar(5)   | NO   | PRI | NULL    |       |
+| hotel_id   | varchar(10)  | NO   | PRI | NULL    |       |
+| service_id | varchar(10)  | NO   | MUL | NULL    |       |
+| room_type  | varchar(10)  | NO   |     | NULL    |       |
+| room_rent  | varchar(10)  | NO   |     | NULL    |       |
+| room_desc  | varchar(100) | NO   |     | NULL    |       |
+| occupied   | varchar(3)   | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+7 rows in set (0.002 sec)
+
+MariaDB [Hotel]> desc services;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| service_id   | varchar(10)  | NO   | PRI | NULL    |       |
+| service_name | varchar(10)  | NO   |     | NULL    |       |
+| service_type | varchar(10)  | NO   |     | NULL    |       |
+| service_desc | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [Hotel]> desc stays;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| customer_id | varchar(10) | NO   | PRI | NULL    |       |
+| check_in    | varchar(10) | NO   | PRI | NULL    |       |
+| check_out   | varchar(10) | NO   | PRI | NULL    |       |
+| hotel_id    | varchar(10) | NO   | PRI | NULL    |       |
+| room_no     | varchar(10) | NO   | PRI | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [Hotel]> desc stays;
+

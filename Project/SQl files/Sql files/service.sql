@@ -1,0 +1,10 @@
+insert into services values ('S101','Laundry','Self','Laundry Available','EH101');
+insert into services values ('S102','Room cleaning','Room','Daily ','GH101');
+insert into services values ('S103','water supply','Self','Twice per day','LP101');
+insert into services values ('S104','Library','Room','24*7','NS101');
+insert into services values ('S105','Massage','Room','24*7','PH101');
+insert into services values ('S106','Pool','Self','24*7','SB101');
+insert into services values ('S107','Games','Self','All indore games','SH101');
+insert into services values ('S108','Wifi','Self','ID Password will be provided','SH102');
+insert into services values ('S109','Taylor','Room','Taylor Available','SH102');
+insert into services values ('S110','Pool Bar','Waiter','All drinks available at the pool','SH101');
